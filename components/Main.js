@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, Platform, StyleSheet, Text, View} from 'react-native';
 import {Image, TouchableOpacity, Alert, ImageBackground, Select, Linking, TextInput, Contains} from 'react-native';
 
 
@@ -19,47 +19,27 @@ class Login extends Component{
     render(){
 
         return(
+            <View style={Style.container}>
+                <View style={Style.title1}>
+                    <View style={Style.title11}>
+                        <Image source={require('./img/apple-touch-icon-57x57.png')} style={Style.logo}/>
+                    </View>
+                    <View style={Style.title12}>
+                        <Text style={Style.text1}>Main Menu</Text>
+                    </View>
 
+                </View>
+                <View style={Style.title2}></View>
 
-                 <View >
-                        <Text style={Style.text}>Sign in to View Your Stock</Text>
+                <TouchableOpacity style={Style.button} onPress={() => {this.company()}}>
+                            <Text style={Style.buttonText}>COMPANY</Text>
+                </TouchableOpacity>
 
-                           <View style={Style.view}>
-                                <TouchableOpacity style={Style.div} onPress={() => {this.login()}}>
-                                    <Text style={Style.text}>Login</Text>
-                                 </TouchableOpacity>
+                <TouchableOpacity style={Style.button} onPress={() => {this.information()}}>
+                            <Text style={Style.buttonText}>INFOMATION</Text>
+                </TouchableOpacity>
 
-                                  <TouchableOpacity style={Style.div} onPress= {() => {this.logout()}}>
-                                    <Text style={Style.text}>Log Out</Text>
-                                  </TouchableOpacity>
-
-                           </View>
-                           <View style={Style.view}>
-                               <TouchableOpacity style={Style.div} >
-                                    <Text style={Style.text}>View Info</Text>
-                                </TouchableOpacity>
-
-                                 <TouchableOpacity style={Style.div} >
-                                    <Text style={Style.text}>Company Info</Text>
-                                 </TouchableOpacity>
-
-                          </View>
-                          <View style={Style.view}>
-                              <TouchableOpacity style={Style.div} >
-                                    <Text style={Style.text}>Share Account</Text>
-                               </TouchableOpacity>
-
-                                <TouchableOpacity style={Style.div} >
-                                    <Text style={Style.text}>Transaction</Text>
-                                </TouchableOpacity>
-
-                         </View>
-
-
-
-                 </View>
-
-
+            </View>
         );
     }
 }
@@ -67,46 +47,74 @@ class Login extends Component{
 module.exports = Login;
 var Style = StyleSheet.create({
     container: {
-          paddingTop: 23,
-          borderStyle: 'solid',
-          borderColor: 'purple',
-          borderWidth: 5,
-          flex: 1
+              backgroundColor: '#181922',
+              flex: 1
 
-     },
-    div: {
-        height: 160,
-        width: 160,
-        marginLeft: 8,
-        borderStyle: 'solid',
-        borderColor: 'purple',
-        borderWidth: 5,
-        justifyContent: 'flex-start',
+         },
+         img: {
+              width: 30,
+              height: 30,
+              marginTop: 10,
+              marginLeft: 30,
 
-    },
+            },
+         logo: {
+               width: 57,
+               height: 57,
+               marginTop: 10,
 
-    view: {
-        flexDirection: 'row',
-        marginLeft: 10,
-        marginTop: 5,
-        height: 160,
-        width: 160,
-    },
+             },
+         title1: {
+               backgroundColor: '#2C2C37',
+               height: 80,
+               flexDirection: 'row',
+          },
+         title11: {
+                 width: 57,
+                 height: 70,
+                 flexDirection: 'row',
+                 justifyContent: 'flex-start',
+           },
+         title12: {
+              width: 310,
+              height: 70,
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
 
-    textButton: {
-            fontSize: 30,
-            textAlign: 'center',
-            color: 'red',
-            fontWeight: 'bold'
         },
 
-    text: {
-        fontSize: 30,
-        textAlign: 'center',
-        margin: 5,
-        color: 'red',
-        fontWeight: 'bold'
-    },
+        text1: {
+            marginTop: 20,
+            fontSize: 25,
+            marginLeft: 20,
+            textAlign: 'center',
+            color: '#D7D8E4',
+            fontFamily: 'sans-serif-light',
+            justifyContent: 'flex-start',
+
+        },
+
+        button: {
+           margin: 15,
+           height: 50,
+           marginTop: 10,
+           borderColor: '#48484D',
+           backgroundColor: '#2C2C37',
+           borderWidth: 1,
+           color: 'white',
+           fontSize: 15,
+           borderRadius: 2,
+
+         },
+
+        buttonText:{
+              fontSize: 20,
+              color: '#D7D8E4',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              marginTop: 8
+         },
+
 
 });
 export default Style;
