@@ -3,16 +3,16 @@ import {ScrollView, Platform, StyleSheet, Text, View} from 'react-native';
 import {Image, TouchableOpacity, Alert, ImageBackground, Select, Linking, TextInput, Contains} from 'react-native';
 
 
-class Login extends Component{
-    login(){
+class Main extends Component{
+    company(){
             this.props.navigator.push({
-                  component: require('./View')
+                  component: require('./Company')
             })
         }
 
-    logout(){
+    information(){
                  this.props.navigator.push({
-                     component: require('./Main')
+                     component: require('./Information')
                  })
              }
 
@@ -30,6 +30,9 @@ class Login extends Component{
 
                 </View>
                 <View style={Style.title2}></View>
+                <View style={Style.title3}>
+                    <Text style={Style.text1}>Write something here!!!</Text>
+                </View>
 
                 <TouchableOpacity style={Style.button} onPress={() => {this.company()}}>
                             <Text style={Style.buttonText}>COMPANY</Text>
@@ -44,7 +47,7 @@ class Login extends Component{
     }
 }
 
-module.exports = Login;
+module.exports = Main;
 var Style = StyleSheet.create({
     container: {
               backgroundColor: '#181922',
@@ -82,6 +85,16 @@ var Style = StyleSheet.create({
               justifyContent: 'flex-start',
 
         },
+        title2: {
+            height: 5,
+            backgroundColor: '#700000',
+
+       },
+         title3: {
+             height: 380,
+
+
+        },
 
         text1: {
             marginTop: 20,
@@ -95,6 +108,7 @@ var Style = StyleSheet.create({
         },
 
         button: {
+
            margin: 15,
            height: 50,
            marginTop: 10,
