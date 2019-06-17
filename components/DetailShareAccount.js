@@ -35,7 +35,7 @@ class DetailShareAccount extends Component{
                             <Text style={Style.buttonText}>TRANSACTION</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={Style.button} onPress={() => {this.bonusShares()}}>
-                            <Text style={Style.buttonText}>Bonus Shares</Text>
+                            <Text style={Style.buttonText}>BONUS SHARES</Text>
                 </TouchableOpacity>
 
             </View>
