@@ -35,7 +35,7 @@ class Login extends Component{
         return(
             <View style={Style.container}>
                             <Text style={Style.h1}>Login</Text>
-                            <Image source={require('./apple-touch-icon-114x114.png')} style={Style.img}/>
+                            <Image source={require('./img/apple-touch-icon-114x114.png')} style={Style.img}/>
                             <Text style={Style.text}>YOUR SHARES</Text>
                             <Text style={Style.h2}>Email </Text>
                             <TextInput style={Style.input}  ref={input => { this.emailInput = input }}
