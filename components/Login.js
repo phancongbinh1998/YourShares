@@ -28,7 +28,17 @@ class Login extends Component{
         })
     }
 
+    signUpWithGoogle(){
+        this.props.navigator.push({
+                  component: require('./Main')
+            })
+    }
 
+    register(){
+        this.props.navigator.push({
+              component: require('./Register')
+        })
+    }
 
     render(){
 
@@ -51,16 +61,16 @@ class Login extends Component{
                             <TouchableOpacity style={Style.button} onPress={() => {this.login(this.state.email, this.state.password)}}>
                                 <Text style={Style.buttonText}>Login</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity >
-                                <Text style={Style.h3}>Forget your password?</Text>
+
+                            <TouchableOpacity style={Style.buttonGoogle} onPress={() => {this.signUpWithGoogle()}}>
+
+                                <Text style={Style.buttonText1}>Sign up with Google+</Text>
                             </TouchableOpacity>
-                                <TouchableOpacity>
+
+                                <TouchableOpacity onPress={() => {this.register()}}>
                                     <Text style={Style.h4}>Don`t have account yet?<Text style={Style.h5}> Register</Text></Text>
 
                                 </TouchableOpacity>
-
-
-
 
 
                         </View>
@@ -82,6 +92,11 @@ var Style = StyleSheet.create({
          marginLeft:123,
          marginTop: 10,
 
+       },
+
+    imgIcon: {
+         width: 50,
+         height: 49,
        },
     input: {
           margin: 15,
@@ -107,10 +122,28 @@ var Style = StyleSheet.create({
 
        },
 
+    buttonGoogle: {
+          backgroundColor: '#700000',
+          padding: 10,
+          margin: 15,
+          height: 50,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderColor: '#700000',
+          borderWidth: 1,
+          borderRadius: 2,
+
+       },
+
     buttonText:{
           fontSize: 20,
           color: '#700000',
 
+       },
+
+    buttonText1:{
+          fontSize: 20,
+          color: 'white',
        },
     h1: {
             fontSize: 15,
@@ -127,7 +160,7 @@ var Style = StyleSheet.create({
             marginLeft: 20,
             color: '#D7D8E4',
             fontWeight: 'bold',
-            marginTop: 10,
+            marginTop: -5,
         },
 
     h3: {
