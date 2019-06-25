@@ -11,10 +11,10 @@ class Main extends Component{
         }
 
     information(){
-                 this.props.navigator.push({
-                     component: require('./Information')
-                 })
-             }
+         this.props.navigator.push({
+             component: require('./Information')
+         })
+     }
 
     render(){
 
@@ -25,9 +25,12 @@ class Main extends Component{
                         <Image source={require('./img/apple-touch-icon-57x57.png')} style={Style.logo}/>
                     </View>
                     <View style={Style.title12}>
-                        <Text style={Style.text1}>Main Menu</Text>
+                        <Text style={Style.text1}>Your Shares</Text>
                     </View>
+                    <TouchableOpacity onPress={() => {this.information()}}>
+                         <Image source={require('./img/logout-icon-png-25.jpg')} style={Style.img}/>
 
+                    </TouchableOpacity>
                 </View>
                 <View style={Style.title2}></View>
                 <View style={Style.title3}>
@@ -38,9 +41,6 @@ class Main extends Component{
                             <Text style={Style.buttonText}>COMPANY</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={Style.button} onPress={() => {this.information()}}>
-                            <Text style={Style.buttonText}>INFOMATION</Text>
-                </TouchableOpacity>
 
             </View>
         );
@@ -55,10 +55,10 @@ var Style = StyleSheet.create({
 
          },
          img: {
-              width: 30,
-              height: 30,
+              width: 60,
+              height: 60,
               marginTop: 10,
-              marginLeft: 30,
+
 
             },
          logo: {
@@ -79,7 +79,7 @@ var Style = StyleSheet.create({
                  justifyContent: 'flex-start',
            },
          title12: {
-              width: 310,
+              width: 240,
               height: 70,
               flexDirection: 'row',
               justifyContent: 'flex-start',
