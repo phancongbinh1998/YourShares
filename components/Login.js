@@ -24,7 +24,7 @@ class Login extends Component{
 
     login = (email, pass) => {
         this.props.navigator.push({
-              component: require('./View')
+              component: require('./Main')
         })
     }
 
